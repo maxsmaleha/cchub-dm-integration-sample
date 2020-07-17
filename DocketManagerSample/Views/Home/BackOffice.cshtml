@@ -1,0 +1,16 @@
+﻿@model DocketManagerSample.Models.Home.BackOfficeViewModel
+
+@{
+    // set this so the layout rendering sees an anonymous user
+    // ViewData["signed-out"] = true;
+}
+
+<small>Customer's Canvas Hub BackOffice is loaded in this iframe. </small>
+@if (Model.LoginUrl != null)
+{
+    <iframe src="@Model.LoginUrl"></iframe>
+}
+
+@section scripts
+{
+}

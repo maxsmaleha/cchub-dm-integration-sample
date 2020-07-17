@@ -1,0 +1,27 @@
+﻿@model List<DocketManagerSample.Models.Products.ProductModel>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1 class="display-4">View Products</h1>
+<p class="lead">This section mocks a DocketManager product catalogue. </p>
+<p>The same list of products is passed to the BackOffice through the API (see <code>ProductController</code>). You can check it by navigating to the Templates section, trying to create a Template and connect it to a DocketManager product.</p>
+
+<div class="row">
+    @foreach(var item in Model)
+    {
+        <div class="col mt-3">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="@item.Image" alt="@item.Type">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">
+                        @Html.DisplayNameFor(model => item.Id) = @item.Id<br />
+                        @Html.DisplayNameFor(model => item.Type) = @item.Type<br />
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
